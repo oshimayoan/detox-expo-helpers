@@ -68,7 +68,7 @@ const reloadApp = async (params) => {
   await device.launchApp({
     permissions: params && params.permissions,
     newInstance: true,
-    url,
+    url: (params && params.url) || url,
     sourceApp: 'host.exp.exponent',
     launchArgs: { EXKernelDisableNuxDefaultsKey: true, detoxURLBlacklistRegex: formattedBlacklistArg },
   });
